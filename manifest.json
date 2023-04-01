@@ -1,0 +1,27 @@
+{
+  "short-name": "missioncontrol",
+  "name": "missioncontrol",
+  "icons": [
+    {
+      "src": "static/assets/favicon.png?v=1.0",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "static/assets/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start-url": "https://andrewbarbour.com",
+  "display": "fullscreen",
+  "version": "0.0.1",
+  "description": "Andrew Barbour | Software Engineer Portfolio Site",
+  "theme_color": "#cd2653",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewjbarbour/missioncontrol.git"
+  },
+  "author": "Andrew Barbour",
+  "homepage": "https://andrewbarbour.com/"
+}
