@@ -32,7 +32,7 @@ export default function ContactField(props: ContactFieldProps) {
             {label}
           </label>
           <textarea
-            className="p-1 indent-1 resize-none border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300"
+            className="py-1 px-2 resize-none border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300"
             name={label}
             id={label}
             rows={7}
@@ -42,7 +42,7 @@ export default function ContactField(props: ContactFieldProps) {
               setMsgLength((e.target as HTMLTextAreaElement).value.length)
             }
           />
-          <div>{1000 - msgLength} characters</div>
+          {msgLength > 0 ? <div>{1000 - msgLength} characters</div> : null}
         </div>
       );
     default:
