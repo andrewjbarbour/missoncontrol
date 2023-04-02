@@ -1,12 +1,15 @@
+"use client";
+import * as React from "react";
+
 interface ContactFieldProps {
   label: string;
-  onKeyDown?: () => void;
   required?: boolean;
   type: string;
 }
 
 export default function ContactField(props: ContactFieldProps) {
-  const {label, required, type, onKeyDown} = props;
+  const {label, required, type} = props;
+  const [msgLength, setMsgLength] = React.useState(0);
 
   switch (type) {
     case "text":
@@ -24,18 +27,22 @@ export default function ContactField(props: ContactFieldProps) {
       );
     case "textarea":
       return (
-        <div className="flex flex-col m-5 w-96 resize-none">
+        <div className="flex flex-col m-5 w-96">
           <label className="my-1" htmlFor={label}>
             {label}
           </label>
           <textarea
-            className="p-1 indent-1 border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300"
+            className="p-1 indent-1 resize-none border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300"
             name={label}
             id={label}
             rows={7}
             required={required ?? true}
             maxLength={1000}
+            onKeyDown={e =>
+              setMsgLength((e.target as HTMLTextAreaElement).value.length)
+            }
           />
+          <div>{1000 - msgLength} characters</div>
         </div>
       );
     default:
