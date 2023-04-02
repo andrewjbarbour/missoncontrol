@@ -1,9 +1,10 @@
 "use client";
-import Link from "next/link";
 import * as React from "react";
+import Link from "next/link";
 import {usePathname} from "next/navigation";
+
 import Navlink from "./navlink";
-import {getPathClass, isActivePath} from "../page.utils";
+import {getPathClass} from "../page.utils";
 
 const navPages = ["projects", "media", "about", "contact"];
 
