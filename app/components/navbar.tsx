@@ -9,7 +9,14 @@ interface NavlinkProps {
 
 export function Navlink(props: NavlinkProps) {
   const {name} = props;
-  return <Link href={`/${name}`}>{name.toLocaleUpperCase()}</Link>;
+  return (
+    <Link
+      className="text-xl text-[#666] hover:underline hover:underline-offset-8 decoration-2 hover:text-slate-950"
+      href={`/${name}`}
+    >
+      {name[0].toLocaleUpperCase() + name.slice(1)}
+    </Link>
+  );
 }
 
 export default function Navbar() {
