@@ -21,7 +21,7 @@ export function Navlink(props: NavlinkProps) {
 
 export default function Navbar() {
   return (
-    <nav className="flex place-content center w-screen flex-shrink-0 p-8">
+    <nav className="flex w-screen flex-shrink-0 p-8">
       <div className="w-1/2">
         <Link href="/" className="text-3xl">
           Andrew Barbour
