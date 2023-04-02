@@ -20,7 +20,7 @@ export default function ContactField(props: ContactFieldProps) {
             className="p-1 indent-1 border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300"
             name={label}
             id={label}
-            type={type}
+            type={label === "email" ? label : type}
             required={required ?? true}
           />
         </div>
@@ -42,7 +42,11 @@ export default function ContactField(props: ContactFieldProps) {
               setMsgLength((e.target as HTMLTextAreaElement).value.length)
             }
           />
-          {msgLength > 0 ? <div>{1000 - msgLength} characters left</div> : null}
+          {msgLength > 0 ? (
+            <small className="text-sm">
+              {1000 - msgLength} characters left
+            </small>
+          ) : null}
         </div>
       );
     default:

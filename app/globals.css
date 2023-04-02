@@ -23,7 +23,8 @@ nav a {
   transition: background-size 0.2s ease-in, background-position 0s 0.2s ease-in;
 }
 
-nav a:hover {
+nav a:hover,
+.activePath {
   background-position: 100% 100%;
   background-size: 100% 2px;
 }

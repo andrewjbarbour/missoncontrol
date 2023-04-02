@@ -27,6 +27,9 @@ export default function Contact() {
           );
         })}
       </form>
+      <button name="send-msg" type="submit">
+        Send
+      </button>
     </div>
   );
 }

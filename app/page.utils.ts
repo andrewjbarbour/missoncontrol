@@ -5,3 +5,17 @@ export const getTestBorderPrimitives = (color?: string) => {
 
 export const capitalize = (name: string) =>
   name[0].toLocaleUpperCase() + name.slice(1);
+
+export const getPathClass = (activePath: string, currentPath?: string) => {
+  if (isActivePath(activePath, currentPath)) {
+    return "activePath";
+  }
+  return "";
+};
+
+export const isActivePath = (activePath: string, currentPath?: string) => {
+  if (currentPath) {
+    return activePath.replace("/", "") === currentPath;
+  }
+  return activePath.replace("/", "") === "";
+};
