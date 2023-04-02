@@ -38,9 +38,9 @@ export default function ContactField(props: ContactFieldProps) {
             rows={7}
             required={required ?? true}
             maxLength={1000}
-            onKeyUp={(e: any) => {
-              setMsgLength((e.target as HTMLTextAreaElement).value.length);
-            }}
+            onKeyUp={e =>
+              setMsgLength((e.target as HTMLTextAreaElement).value.length)
+            }
           />
           <div>{1000 - msgLength} characters</div>
         </div>
