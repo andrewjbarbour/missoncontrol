@@ -42,7 +42,7 @@ export default function ContactField(props: ContactFieldProps) {
               setMsgLength((e.target as HTMLTextAreaElement).value.length)
             }
           />
-          {msgLength > 0 ? <div>{1000 - msgLength} characters</div> : null}
+          {msgLength > 0 ? <div>{1000 - msgLength} characters left</div> : null}
         </div>
       );
     default:
