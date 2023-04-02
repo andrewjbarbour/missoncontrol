@@ -1,5 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
+import {capitalize} from "../page.utils";
 
 const navPages = ["projects", "media", "about", "contact"];
 
@@ -14,7 +15,7 @@ export function Navlink(props: NavlinkProps) {
       className="text-xl text-[#666] hover:text-slate-950"
       href={`/${name}`}
     >
-      {name[0].toLocaleUpperCase() + name.slice(1)}
+      {capitalize(name)}
     </Link>
   );
 }

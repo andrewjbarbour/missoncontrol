@@ -1,4 +1,4 @@
-"use client";
+import {capitalize} from "../page.utils";
 import ContactField from "./contact-field";
 import ContactIcon from "./contact-icon";
 
@@ -22,7 +22,9 @@ export default function Contact() {
       >
         {contactFields.map(field => {
           const {name, type} = field;
-          return <ContactField label={name} key={name} type={type} />;
+          return (
+            <ContactField label={capitalize(name)} key={name} type={type} />
+          );
         })}
       </form>
     </div>
