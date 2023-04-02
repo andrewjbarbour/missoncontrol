@@ -11,7 +11,7 @@ export function Navlink(props: NavlinkProps) {
   const {name} = props;
   return (
     <Link
-      className="text-xl text-[#666] hover:underline hover:underline-offset-8 decoration-2 hover:text-slate-950"
+      className="text-xl text-[#666] hover:text-slate-950"
       href={`/${name}`}
     >
       {name[0].toLocaleUpperCase() + name.slice(1)}
@@ -23,10 +23,7 @@ export default function Navbar() {
   return (
     <nav className="flex place-content center w-screen flex-shrink-0 p-8">
       <div className="w-1/2">
-        <Link
-          href="/"
-          className="text-3xl hover:underline hover:underline-offset-8 decoration-2"
-        >
+        <Link href="/" className="text-3xl">
           Andrew Barbour
         </Link>
       </div>
