@@ -27,7 +27,11 @@ export default function Contact() {
           );
         })}
       </form>
-      <button name="send-msg" type="submit">
+      <button
+        className="border-black border bg-black rounded-full py-1 px-4 text-white"
+        name="send-msg"
+        type="submit"
+      >
         Send
       </button>
     </div>
