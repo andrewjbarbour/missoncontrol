@@ -43,7 +43,7 @@ export default function ContactField(props: ContactFieldProps) {
             }
           />
           {msgLength > 0 ? (
-            <small className="text-sm">
+            <small className="text-sm -mb-5">
               {1000 - msgLength} characters left
             </small>
           ) : null}

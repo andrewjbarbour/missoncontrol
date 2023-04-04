@@ -14,6 +14,7 @@ export default function Contact() {
     <div className="flex flex-col items-center w-screen">
       <ContactIcon />
       <form
+        className="flex flex-col items-center"
         name="contact"
         method="POST"
         data-netlify="true"
@@ -26,14 +27,14 @@ export default function Contact() {
             <ContactField label={capitalize(name)} key={name} type={type} />
           );
         })}
+        <button
+          className="border-black border bg-black rounded-full py-1 px-4 my-4 text-white"
+          name="send-msg"
+          type="submit"
+        >
+          Send
+        </button>
       </form>
-      <button
-        className="border-black border bg-black rounded-full py-1 px-4 text-white"
-        name="send-msg"
-        type="submit"
-      >
-        Send
-      </button>
     </div>
   );
 }
