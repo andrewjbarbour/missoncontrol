@@ -22,11 +22,11 @@ export const metadata = {
   appleWebApp: {
     title: "Apple Web App",
     statusBarStyle: "black-translucent",
-    startupImage: ["./apple-touch-icon.png"],
+    startupImage: ["./images/apple-touch-icon.png"],
   },
   icons: {
     icon: "./favicon.ico",
-    apple: "./apple-touch-icon.png",
+    apple: "./images/apple-touch-icon.png",
   },
 };
 
