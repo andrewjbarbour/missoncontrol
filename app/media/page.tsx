@@ -5,8 +5,6 @@ import propDescriptors from "../../public/images/property-descriptors.png";
 import engineeringPoetics from "../../public/images/engineering-poetics.png";
 import Link from "next/link";
 
-const assetPath = "/assets";
-
 const images = [
   {
     name: "Concurrent React",
@@ -25,6 +23,17 @@ const images = [
     href: `rise-of-thermodynamics.pdf`,
   },
 ];
+
+const getImageHeight = (imageName: string) => {
+  switch (imageName) {
+    case "Property Descriptors":
+      return "308px";
+    case "Concurrent React":
+      return "108px";
+    default:
+      return "";
+  }
+};
 
 export default function Media() {
   return (
@@ -46,13 +55,9 @@ export default function Media() {
                 className="bg-white"
                 width={300}
                 height={300}
-                style={
-                  img.name === "Property Descriptors"
-                    ? {minHeight: "308px"}
-                    : img.name === "Concurrent React"
-                    ? {minHeight: "108px"}
-                    : undefined
-                }
+                style={{
+                  minHeight: getImageHeight(img.name),
+                }}
               />
               <figcaption>{img.name}</figcaption>
             </figure>
@@ -62,5 +67,3 @@ export default function Media() {
     </div>
   );
 }
-
-export function Figure() {}
