@@ -11,7 +11,7 @@ const images = [
     src: concurrentReact,
     href: `ConcurrentReact.pptx`,
   },
-  {name: "Layers", src: layers, href: `CSSLayers.pptx`},
+  {name: "CSS Layers", src: layers, href: `CSSLayers.pptx`},
   {
     name: "Property Descriptors",
     src: propDescriptors,
