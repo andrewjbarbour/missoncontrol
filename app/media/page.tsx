@@ -29,7 +29,7 @@ const images = [
 export default function Media() {
   return (
     <div className="flex justify-center items-center">
-      <div className="grid grid-cols-2 grid-rows-2 gap-3 ">
+      <div className="grid grid-cols-2 grid-rows-2 gap-10 ">
         {images.map(img => (
           <Link
             key={img.name}
@@ -48,7 +48,9 @@ export default function Media() {
                 height={300}
                 style={
                   img.name === "Property Descriptors"
-                    ? {minHeight: "306px"}
+                    ? {minHeight: "308px"}
+                    : img.name === "Concurrent React"
+                    ? {minHeight: "108px"}
                     : undefined
                 }
               />
