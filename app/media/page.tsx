@@ -1,9 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import concurrentReact from "../../public/images/concurrent-react.png";
 import layers from "../../public/images/layers.png";
 import propDescriptors from "../../public/images/property-descriptors.png";
 import engineeringPoetics from "../../public/images/engineering-poetics.png";
-import Link from "next/link";
 
 const images = [
   {
