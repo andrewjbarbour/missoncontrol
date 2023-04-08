@@ -5,11 +5,11 @@ import SocialBar from "./components/socialbar";
 
 export default function Home() {
   return (
-    <main className="flex flex-row content-center items-center h-full w-full ">
+    <main className="flex flex-row content-center items-center h-full w-full">
       <div className="flex flex-col items-center content-center w-full">
         <div className="flex place-content-center h-full">
           <Image
-            alt="profile photo"
+            alt="profile pic"
             className="rounded-full min-h-260 pr-5 scale-75 w-[371px] h-[395px]"
             src={profile}
           />
