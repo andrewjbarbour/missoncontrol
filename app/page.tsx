@@ -1,33 +1,23 @@
 import Image from "next/image";
 import {MainButton} from "./components/mainbutton";
-import styles from "./page.module.css";
 import profile from "../public/images/profile-pic.jpeg";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div
-        className="flex content-center items-center p-8 min-h-full"
-        style={{flex: 1}}
-      >
+    <main className="flex flex-row content-center items-center h-full w-full ">
+      <div className="w-1/3 flex place-content-center">
         <Image
           alt="profile photo"
-          className="flex flex-col content-center items-center rounded-full"
+          className="rounded-full min-h-260"
           style={{
-            marginTop: "-150px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            minHeight: "260px",
             minWidth: "244px",
+            display: "flex",
           }}
-          height={260}
+          height={300}
           src={profile}
         />
       </div>
-      <div
-        className="flex flex-col items-center content-center "
-        style={{flex: 2}}
-      >
+      <div className="flex flex-col items-center content-center">
         <h1 className="text-3xl mb-10 font-bold">{`Hi, I'm Andrew.`}</h1>
         <p className="max-w-xl text-xl mb-5">
           {`I’m a software engineer working with TypeScript, React, and Node, along
@@ -44,7 +34,6 @@ export default function Home() {
           <MainButton href="/about" text="SEE RESUME" />
         </div>
       </div>
-      <div className="" style={{flex: 1}} />
     </main>
   );
 }
