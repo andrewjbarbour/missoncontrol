@@ -2,18 +2,17 @@ import Link from "next/link";
 
 export default function SocialBar() {
   const socialBarIconStyles = "p-1 hover:scale-105";
-  const size = "30pt";
-  const defaultProps = {
-    className: socialBarIconStyles,
+  const svgProps = {
     height: "30pt",
     width: "30pt",
-    fill: "rgb(128, 126, 126, 1)",
+    fill: "currentColor",
   };
+
   return (
     <div className="flex p-5">
       <Link className={socialBarIconStyles} href="mailto:barbouraj@gmail.com">
         <svg
-          {...defaultProps}
+          {...svgProps}
           viewBox="0 0 448 448"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -26,7 +25,7 @@ export default function SocialBar() {
         className={socialBarIconStyles}
         href="https://github.com/andrewjbarbour"
       >
-        <svg {...defaultProps} viewBox="0 0 128 128">
+        <svg {...svgProps} viewBox="0 0 128 128">
           <g>
             <path
               fill-rule="evenodd"
@@ -41,7 +40,7 @@ export default function SocialBar() {
         className={socialBarIconStyles}
         href="https://www.linkedin.com/in/barbouraj/"
       >
-        <svg {...defaultProps} x="0px" y="0px" viewBox="0 0 36.099999 36">
+        <svg {...svgProps} x="0px" y="0px" viewBox="0 0 36.099999 36">
           <g id="g6">
             <g id="g4">
               <path
