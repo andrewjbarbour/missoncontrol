@@ -7,7 +7,7 @@ export interface ButtonProps {
 
 export function MainButton({href, text}: ButtonProps) {
   return (
-    <div className="flex justify-center p-4 m-4 w-52 bg-black rounded-full text-white transition-all ease-in 3s hover:scale-110">
+    <div className="flex justify-center p-4 m-4 w-52 bg-black rounded-full text-white transition-all ease-in 3s hover:scale-110 cursor-pointer">
       <Link href={href}>{text}</Link>
     </div>
   );

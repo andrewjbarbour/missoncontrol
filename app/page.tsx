@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {MainButton} from "./components/mainbutton";
 import profile from "../public/images/profile-pic.jpeg";
+import SocialBar from "./components/socialbar";
 
 export default function Home() {
   return (
@@ -11,7 +12,6 @@ export default function Home() {
           className="rounded-full min-h-260"
           style={{
             minWidth: "244px",
-            display: "flex",
           }}
           height={300}
           src={profile}
@@ -33,6 +33,7 @@ export default function Home() {
           <MainButton href="/projects" text="REVIEW PROJECTS" />
           <MainButton href="/about" text="SEE RESUME" />
         </div>
+        <SocialBar />
       </div>
     </main>
   );
