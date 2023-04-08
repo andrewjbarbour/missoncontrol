@@ -31,7 +31,7 @@ export default function Home() {
         </p>
         <div className="flex justify-center mt-5">
           <MainButton href="/projects" text="REVIEW PROJECTS" />
-          <MainButton href="/about" text="SEE RESUME" />
+          <MainButton href="assets/resume.docx" text="SEE RESUME" />
         </div>
         <SocialBar />
       </div>
