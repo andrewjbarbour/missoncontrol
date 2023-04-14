@@ -18,7 +18,7 @@ export default function Navbar() {
     setMode(prev => (prev === "light" ? "dark" : "light"));
   };
 
-  const modeClassName = `max-h-[50px] min-h-[50px] min-w-[50px] max-w-[50px] box-border border-2 border-transparent -mt-1 hover:border-[#020617] hover:border-2 rounded-full cursor-pointer p-2 transition-all ease-in .3s`;
+  const modeClassName = `max-h-[50px] min-h-[50px] min-w-[50px] max-w-[50px] box-border border-2 border-transparent -mt-1 hover:border-[#020617] hover:border-2 rounded-full cursor-pointer p-2 transition-all ease-in .3s select-none`;
 
   return (
     <nav className="flex w-screen flex-shrink-0 place-content-center p-8">
