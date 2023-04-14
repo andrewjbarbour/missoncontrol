@@ -1,17 +1,24 @@
 "use client";
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {usePathname} from "next/navigation";
 import Navlink from "./navlink";
 import {getPathClass} from "../page.utils";
-import light from "../../public/images/light.svg";
+import {IoMoonOutline} from "react-icons/io5";
+import {IoSunnyOutline} from "react-icons/io5";
 
 const navPages = ["projects", "media", "about", "contact"];
 
 export default function Navbar() {
   const pathName = usePathname();
   const pathClass = getPathClass(pathName);
+  const [mode, setMode] = React.useState("light");
+
+  const toggleMode = () => {
+    setMode(prev => (prev === "light" ? "dark" : "light"));
+  };
+
+  const modeClassName = `max-h-[50px] min-h-[50px] min-w-[50px] max-w-[50px] box-border border-2 border-transparent -mt-1 hover:border-[#020617] hover:border-2 rounded-full cursor-pointer p-2 transition-all ease-in .3s`;
 
   return (
     <nav className="flex w-screen flex-shrink-0 place-content-center p-8">
@@ -25,11 +32,13 @@ export default function Navbar() {
           <Navlink key={navPage} name={navPage} pathName={pathName} />
         ))}
       </div>
-      <Image
-        alt="Light"
-        src={light}
-        className={`max-h-[50px] min-h-[50px] box-border border-2 border-transparent -mt-1 hover:border-[#666]/50 hover:border-2 rounded-full cursor-pointer p-2 transition-all ease-in .3s`}
-      ></Image>
+      <div onClick={toggleMode}>
+        {mode === "light" ? (
+          <IoSunnyOutline className={modeClassName} />
+        ) : (
+          <IoMoonOutline className={modeClassName} />
+        )}
+      </div>
     </nav>
   );
 }
