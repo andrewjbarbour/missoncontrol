@@ -23,7 +23,7 @@ export default function Contact() {
     <div className="flex flex-col items-center w-screen">
       <ContactIcon />
       <form
-        className="flex flex-col items-center"
+        className="flex flex-col items-center w-full"
         name="contact"
         method="POST"
         data-netlify="true"

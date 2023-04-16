@@ -14,7 +14,7 @@ export default function ContactField(props: ContactFieldProps) {
   switch (type) {
     case "text":
       return (
-        <div className="flex flex-col m-5 w-96 indent-1">
+        <div className="flex flex-col m-5 w-11/12 indent-1">
           <label htmlFor={label}>{label}</label>
           <input
             className="p-1 indent-1 border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300 dark:bg-dark-secondary"
@@ -27,7 +27,7 @@ export default function ContactField(props: ContactFieldProps) {
       );
     case "textarea":
       return (
-        <div className="flex flex-col m-5 w-96">
+        <div className="flex flex-col m-5 w-11/12">
           <label className="my-1" htmlFor={label}>
             {label}
           </label>
