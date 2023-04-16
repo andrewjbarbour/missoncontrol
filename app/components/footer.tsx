@@ -7,7 +7,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="flex flex-row place-content-between p-8  text-[#666] text-lg">
+    <footer className="flex flex-row place-content-between p-8  text-[#666] text-lg dark:text-white">
       <span>© {new Date().getFullYear()} Andrew Barbour</span>
       <div className="hover:cursor-pointer">
         <a onClick={handleClick}>↑</a>

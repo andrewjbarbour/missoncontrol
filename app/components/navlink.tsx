@@ -12,7 +12,7 @@ export default function Navlink(props: NavlinkProps) {
 
   return (
     <Link
-      className={`text-xl text-[#666] hover:text-slate-950 ${pathClass}`}
+      className={`text-xl text-[#666] hover:text-slate-950 ${pathClass} dark:text-white `}
       href={`/${name}`}
     >
       {capitalize(name)}

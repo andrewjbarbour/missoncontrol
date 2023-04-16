@@ -23,6 +23,10 @@ nav a {
   transition: background-size 0.2s ease-in, background-position 0s 0.2s ease-in;
 }
 
+.dark nav a {
+  background-image: linear-gradient(#fff 0 0);
+}
+
 nav a:hover,
 .activePath {
   background-position: 100% 100%;

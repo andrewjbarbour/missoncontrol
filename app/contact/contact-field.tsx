@@ -17,7 +17,7 @@ export default function ContactField(props: ContactFieldProps) {
         <div className="flex flex-col m-5 w-96 indent-1">
           <label htmlFor={label}>{label}</label>
           <input
-            className="p-1 indent-1 border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300"
+            className="p-1 indent-1 border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300 dark:bg-dark-secondary"
             name={label}
             id={label}
             type={label === "email" ? label : type}
@@ -32,7 +32,7 @@ export default function ContactField(props: ContactFieldProps) {
             {label}
           </label>
           <textarea
-            className="py-1 px-2 resize-none border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300"
+            className="py-1 px-2 resize-none border-[#666] border border-solid border-opacity-20 rounded outline-none focus:ring-1 focus:ring-[#666] transition-shadow ease-in duration-300 dark:bg-dark-secondary"
             name={label}
             id={label}
             rows={7}

@@ -4,7 +4,6 @@ import "./globals.css";
 
 import {Inconsolata} from "next/font/google";
 
-// If loading a variable font, you don't need to specify the font weight
 const inconsolata = Inconsolata({
   subsets: ["latin"],
   display: "swap",
@@ -34,7 +33,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body
-        className={`flex flex-col w-screen h-screen ${inconsolata.className}`}
+        className={`flex flex-col w-screen h-screen ${inconsolata.className} dark:bg-dark-primary dark:text-white`}
       >
         <Navbar />
         <div className="flex-grow flex-shrink-0">{children}</div>
