@@ -7,7 +7,7 @@ import {getPathClass} from "../page.utils";
 import {IoMoonOutline} from "react-icons/io5";
 import {IoSunnyOutline} from "react-icons/io5";
 
-const navPages = ["projects", "media", "about", "contact"];
+const navPages = ["projects", "media", "contact"];
 
 export default function Navbar() {
   const pathName = usePathname();
@@ -17,8 +17,6 @@ export default function Navbar() {
   const toggleMode = () => {
     const nextMode = mode === "light" ? "dark" : "light";
     setMode(nextMode);
-    console.log("nextMode", nextMode);
-    localStorage.setItem("theme", nextMode);
     if (nextMode == "dark") {
       document.documentElement.classList.add("dark");
     } else {
