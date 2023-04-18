@@ -15,10 +15,10 @@ function Menu({setExpanded}: MenuProps) {
   const pathName = usePathname();
   console.log(pathName);
   return (
-    <div className="flex flex-col items-center content-center w-screen h-screen absolute bottom-0 left-0 top-[80px] bg-white">
+    <div className="z-50 flex flex-col items-center content-center w-screen h-screen absolute bottom-0 left-0 top-[80px] bg-white">
       {menuLinks.map(link => (
         <div
-          className="flex place-content-center w-screen h-[90px] border border-black"
+          className="flex place-content-center items-center w-11/12 h-[90px] mx-5 px-5 border-b border-t border-black"
           key={link}
           onClick={() => setExpanded(false)}
         >
