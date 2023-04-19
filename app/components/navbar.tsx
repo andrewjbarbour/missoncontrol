@@ -25,7 +25,7 @@ export default function Navbar() {
     }
   };
 
-  const modeClassName = `h-[50px] w-[50px] box-border border-2 border-transparent -mt-1 hover:border-[#020617] hover:border-2 rounded-full cursor-pointer p-2 transition-all ease-in .3s select-none`;
+  const modeClassName = `h-[50px] w-[50px] box-border border-2 border-transparent -mt-1 hover:border-[#020617] hover:border-2 dark:hover:border-white rounded-full cursor-pointer p-2 transition-all ease-in .3s select-none`;
 
   return (
     <nav className={`flex w-screen flex-shrink-0 sm:place-content-center p-8`}>

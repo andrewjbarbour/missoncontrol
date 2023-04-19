@@ -6,18 +6,20 @@ export interface NavlinkProps {
   pathName: string;
   onClick?: () => void;
   hideDecoration?: boolean;
+  mode?: "mobile" | "large";
 }
 
 export default function Navlink(props: NavlinkProps) {
-  const {name, hideDecoration, pathName} = props;
+  const {name, pathName, hideDecoration, mode} = props;
   const pathClass = getPathClass(pathName, name);
   const decoration = hideDecoration ? "hideDecoration" : "";
+  const mobileStyles = mode === "mobile" ? "dark:text-white" : "";
 
   return (
     <Link
-      className={`text-xl text-[#666] hover:text-slate-950 ${
+      className={`text-xl text-[#666] hover:text-slate-950 dark:hover:text-white ${
         decoration ?? pathClass
-      } dark:text-white`}
+      } ${mobileStyles}`}
       href={name === "home" ? "/" : `/${name}`}
     >
       {capitalize(name)}
