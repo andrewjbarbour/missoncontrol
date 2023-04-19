@@ -38,12 +38,12 @@ const getImageHeight = (imageName: string) => {
 export default function Media() {
   return (
     <div className="flex justify-center items-center m-2">
-      <div className="grid grid-cols-2 grid-rows-2 gap-10 ">
+      <div className="sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:gap-10 ">
         {images.map(img => (
           <Link
             key={img.name}
             href={`assets/${img.href}`}
-            className="flex flex-col justify-center items-center -mt-10"
+            className="flex flex-col justify-center items-center m-14 sm:-mt-10"
           >
             <figure
               key={img.name}
