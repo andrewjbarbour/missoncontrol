@@ -2,7 +2,7 @@
 import * as React from "react";
 import {capitalize} from "../page.utils";
 import ContactField from "./contact-field";
-import ContactIcon from "./contact-icon";
+import {MdEmail} from "react-icons/md";
 
 const contactFields = [
   {name: "name", type: "text"},
@@ -21,7 +21,7 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col items-center w-screen">
-      <ContactIcon />
+      <MdEmail className="w-[20pt] h-[20pt]" />
       <form
         className="flex flex-col items-center w-full"
         name="contact"
@@ -43,7 +43,7 @@ export default function Contact() {
           </div>
         ) : (
           <button
-            className="border-black border bg-black rounded-full py-1 px-4 my-4 text-white transition-all ease-in-out hover:scale-110"
+            className="border-black border bg-black dark:bg-white rounded-full py-1 px-4 my-4 text-white dark:text-black transition-all ease-in-out hover:scale-110"
             name="send-msg"
             type="submit"
           >

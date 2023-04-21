@@ -2,9 +2,9 @@ import Link from "next/link";
 import {AiFillGithub, AiFillLinkedin} from "react-icons/ai";
 import {MdEmail} from "react-icons/md";
 
-export default function SocialBar() {
-  const socialBarIconStyles = `w-[35pt] h-[35pt] hover:scale-105`;
+export const socialBarIconStyles = `w-[35pt] h-[35pt] hover:scale-105`;
 
+export default function SocialBar() {
   return (
     <div className="flex p-5">
       <Link className={socialBarIconStyles} href="mailto:barbouraj@gmail.com">
