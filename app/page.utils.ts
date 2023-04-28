@@ -3,8 +3,11 @@ export const getTestBorderPrimitives = (color?: string) => {
   return `test-border ${color ?? `border-red-600`} border border-solid`;
 };
 
-export const capitalize = (name: string) =>
-  name[0].toLocaleUpperCase() + name.slice(1);
+export const capitalize = (name: string) => {
+  let words = name.split(" ");
+  words = words.map(word => word[0].toLocaleUpperCase() + word.slice(1));
+  return words.join(" ");
+};
 
 export const getPathClass = (activePath: string, currentPath?: string) => {
   if (isActivePath(activePath, currentPath)) {
