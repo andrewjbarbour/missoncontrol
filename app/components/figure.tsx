@@ -9,7 +9,7 @@ export function Figure({caption, src}: FigureProps) {
   return (
     <figure className="flex flex-col justify-center items-center">
       <Image
-        className="min-w-4/5 md:w-[700px] border p-0 m-0"
+        className="w-11/12 sm:w-4/5 md:w-[700px] border p-0 m-0"
         width={200}
         height={200}
         src={`/images/${src}`}
