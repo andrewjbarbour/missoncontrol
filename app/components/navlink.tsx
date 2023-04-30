@@ -17,7 +17,7 @@ export default function Navlink(props: NavlinkProps) {
 
   return (
     <Link
-      className={`text-xl text-[#666] hover:text-slate-950 dark:hover:text-white ${
+      className={`text-xl text-dark-text hover:text-slate-950 dark:hover:text-white ${
         decoration ?? pathClass
       } ${mobileStyles}`}
       href={name === "home" ? "/" : `/${name}`}
