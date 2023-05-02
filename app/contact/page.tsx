@@ -15,9 +15,9 @@ export default function Contact() {
   const [submitted, setSubmitted] = React.useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const form: any = e.target;
     const formData = new FormData(form);
-    e.preventDefault();
     fetch("/", {
       method: "POST",
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -35,12 +35,12 @@ export default function Contact() {
       <MdEmail className="w-[20pt] h-[20pt]" />
       <form
         className="flex flex-col items-center w-full"
-        name="contact"
+        name="missioncontrol"
         method="POST"
         data-netlify="true"
         onSubmit={e => handleSubmit(e)}
       >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="missioncontrol" />
         {contactFields.map(field => {
           const {name, type} = field;
           return (
@@ -48,17 +48,16 @@ export default function Contact() {
           );
         })}
         {submitted ? (
-          <div className="mt-4">
+          <div className="p-[4px] w-11/12 mt-4">
             {"Thanks for your message. I'll be in touch shortly."}
           </div>
         ) : (
-          <button
+          <input
             className="border-black border bg-black dark:bg-white rounded-full py-1 px-4 my-4 text-white dark:text-black transition-all ease-in-out hover:scale-110"
             name="send-msg"
             type="submit"
-          >
-            Send
-          </button>
+            value="Send"
+          ></input>
         )}
       </form>
     </div>
