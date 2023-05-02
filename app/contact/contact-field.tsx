@@ -1,14 +1,16 @@
-"use client";
 import * as React from "react";
 
 interface ContactFieldProps {
   label: string;
   required?: boolean;
   type: string;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
 }
 
 export default function ContactField(props: ContactFieldProps) {
-  const {label, required, type} = props;
+  const {label, required, type, handleChange} = props;
   const [msgLength, setMsgLength] = React.useState(0);
 
   switch (type) {
@@ -22,6 +24,7 @@ export default function ContactField(props: ContactFieldProps) {
             id={label}
             type={label === "email" ? label : type}
             required={required ?? true}
+            onChange={e => handleChange(e)}
           />
         </div>
       );
@@ -38,6 +41,7 @@ export default function ContactField(props: ContactFieldProps) {
             rows={7}
             required={required ?? true}
             maxLength={1000}
+            onChange={e => handleChange(e)}
             onKeyUp={e =>
               setMsgLength((e.target as HTMLTextAreaElement).value.length)
             }

@@ -13,15 +13,29 @@ const contactFields = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = React.useState(false);
+  const [formData, setFormData] = React.useState({});
+
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData({...formData, [e.target.name]: e.target.value});
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form: any = e.target;
-    const formData = new FormData(form);
+    // const form: any = e.target;
+    // const formData = new FormData(form);
+    // console.log("formData", formData);
     fetch("/", {
       method: "POST",
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
-      body: new URLSearchParams(formData.toString()),
+      body: encode({"form-name": "missioncontrol", ...formData}),
     })
       .then(() => {
         setSubmitted(true);
@@ -44,7 +58,12 @@ export default function Contact() {
         {contactFields.map(field => {
           const {name, type} = field;
           return (
-            <ContactField label={capitalize(name)} key={name} type={type} />
+            <ContactField
+              label={capitalize(name)}
+              key={name}
+              type={type}
+              handleChange={handleChange}
+            />
           );
         })}
         {submitted ? (
