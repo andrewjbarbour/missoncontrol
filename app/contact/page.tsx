@@ -23,7 +23,10 @@ export default function Contact() {
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
       body: new URLSearchParams(formData.toString()),
     })
-      .then(() => setSubmitted(true))
+      .then(() => {
+        setSubmitted(true);
+        console.log("Thanks for your submission");
+      })
       .catch(error => alert(error));
   };
 
@@ -37,6 +40,7 @@ export default function Contact() {
         data-netlify="true"
         onSubmit={e => handleSubmit(e)}
       >
+        <input type="hidden" name="form-name" value="contact" />
         {contactFields.map(field => {
           const {name, type} = field;
           return (
