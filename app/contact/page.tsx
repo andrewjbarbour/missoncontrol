@@ -15,17 +15,16 @@ export default function Contact() {
   const [submitted, setSubmitted] = React.useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const form: any = e.target;
+    const formData = new FormData(form);
+    e.preventDefault();
     fetch("/", {
       method: "POST",
       headers: {"Content-Type": "application/x-www-form-urlencoded"},
-      body: JSON.stringify({"form-name": "contact"}),
+      body: new URLSearchParams(formData.toString()),
     })
-      .then(() => alert("Success!"))
+      .then(() => setSubmitted(true))
       .catch(error => alert(error));
-
-    e.preventDefault();
-    e.preventDefault();
-    setSubmitted(true);
   };
 
   return (
