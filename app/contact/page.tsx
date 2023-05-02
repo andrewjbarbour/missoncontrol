@@ -14,11 +14,6 @@ const contactFields = [
 export default function Contact() {
   const [submitted, setSubmitted] = React.useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <div className="flex flex-col items-center w-screen">
       <MdEmail className="w-[20pt] h-[20pt]" />
@@ -27,8 +22,7 @@ export default function Contact() {
         name="contact"
         method="POST"
         data-netlify="true"
-        action="/contact?success"
-        onSubmit={e => handleSubmit(e)}
+        onSubmit={() => setSubmitted(true)}
       >
         {contactFields.map(field => {
           const {name, type} = field;
