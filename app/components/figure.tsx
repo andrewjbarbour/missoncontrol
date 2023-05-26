@@ -14,6 +14,7 @@ export function Figure({caption, src}: FigureProps) {
         height={200}
         src={`/images/${src}`}
         alt={caption}
+        priority
       />
       <figcaption className="pt-2 text-sm text-dark-text">{caption}</figcaption>
     </figure>

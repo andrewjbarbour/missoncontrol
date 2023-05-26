@@ -52,6 +52,7 @@ export default function Media() {
               <Image
                 alt={img.name}
                 src={img.src}
+                priority
                 className="bg-white"
                 width={300}
                 height={300}
