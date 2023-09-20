@@ -12,13 +12,13 @@ export interface NavlinkProps {
 export default function Navlink(props: NavlinkProps) {
   const {name, pathName, hideDecoration, mode} = props;
   const pathClass = getPathClass(pathName, name);
-  const decoration = hideDecoration ? "hideDecoration" : "";
+  const noDecoration = hideDecoration ? "hideDecoration" : "";
   const mobileStyles = mode === "mobile" ? "dark:text-white" : "";
 
   return (
     <Link
       className={`text-xl text-dark-text hover:text-slate-950 dark:hover:text-white ${
-        decoration ?? pathClass
+        noDecoration ? "" : pathClass
       } ${mobileStyles}`}
       href={name === "home" ? "/" : `/${name}`}
     >

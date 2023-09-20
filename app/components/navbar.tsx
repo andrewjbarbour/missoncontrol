@@ -3,7 +3,6 @@ import * as React from "react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import Navlink from "./navlink";
-import {getPathClass} from "../page.utils";
 import {IoMoonOutline} from "react-icons/io5";
 import {IoSunnyOutline} from "react-icons/io5";
 import MenuButton from "./menubutton";
@@ -12,7 +11,6 @@ const navPages = ["projects", "media", "contact"];
 
 export default function Navbar() {
   const pathName = usePathname();
-  const pathClass = getPathClass(pathName);
   const [mode, setMode] = React.useState("light");
 
   const toggleMode = () => {
@@ -30,7 +28,7 @@ export default function Navbar() {
   return (
     <nav className={`flex w-screen flex-shrink-0 sm:place-content-center p-8`}>
       <div className="w-5/6 sm:w-1/2">
-        <Link href="/" className={`text-3xl ${pathClass}`}>
+        <Link href="/" className={`text-3xl`}>
           Andrew Barbour
         </Link>
       </div>

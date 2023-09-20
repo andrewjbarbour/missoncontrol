@@ -4,7 +4,7 @@ import {Figure} from "../../components/figure";
 export default function Altair() {
   const descClassName = "w-4/5 md:w-[700px] pt-8 pb-8";
   return (
-    <div className="flex flex-col justify-center items-center h-full ">
+    <div className="flex flex-col justify-center items-center h-full">
       <p className={descClassName}>
         At Altair, I am building cloud native data visualization and digital
         twin applications for the Altair One cloud platform with React,
