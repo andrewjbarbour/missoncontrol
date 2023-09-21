@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col sm:flex-row justify-center mt-5">
           <MainButton href="/projects" text="REVIEW PROJECTS" />
-          <MainButton href="assets/resume.docx" text="SEE RESUME" />
+          <MainButton href="assets/resume.pdf" text="SEE RESUME" />
         </div>
         <SocialBar />
       </div>
