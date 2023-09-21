@@ -13,7 +13,7 @@ export default function Altair() {
       <Figure src="aone_drive_model.png" caption="Altair One Drive" />
       <p className={descClassName}>
         I built the Plot Viewer for the Altair One Drive, a platform for
-        sharing, visualizing, and running simiulations on engineering model
+        sharing, visualizing, and running simulations on engineering model
         files.
       </p>
       <Figure src="plotviewer.png" caption="Plot Viewer" />
