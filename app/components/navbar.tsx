@@ -11,17 +11,42 @@ const navPages = ["projects", "media", "contact"];
 
 export default function Navbar() {
   const pathName = usePathname();
-  const [mode, setMode] = React.useState("light");
+  const [mode, setMode] = React.useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light",
+  );
 
   const toggleMode = () => {
-    const nextMode = mode === "light" ? "dark" : "light";
-    setMode(nextMode);
-    if (nextMode == "dark") {
+    const theme = localStorage.getItem("theme");
+    if (
+      theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      localStorage.setItem("theme", "light");
+      setMode("light");
+      document.documentElement.classList.remove("dark");
+    } else {
+      setMode("dark");
+      localStorage.setItem("theme", "dark");
       document.documentElement.classList.add("dark");
+    }
+  };
+
+  React.useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (
+      theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+      setMode("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  };
+  }, []);
 
   const modeClassName = `h-[50px] w-[50px] box-border border-2 border-transparent -mt-1 hover:border-[#020617] hover:border-2 dark:hover:border-white rounded-full cursor-pointer p-2 transition-all ease-in .3s select-none`;
 
