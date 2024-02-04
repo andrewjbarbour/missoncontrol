@@ -9,6 +9,9 @@ module.exports = {
         "dark-secondary": "#334155",
         "dark-text": "#666",
       },
+      animation: {
+        "spin-fast": "spin .5s linear infinite",
+      },
     },
   },
   content: [

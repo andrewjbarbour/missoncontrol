@@ -1,8 +1,11 @@
+// import Script from "next/script";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
+import {getTheme} from "./getTheme";
 import "./globals.css";
 
 import {Inconsolata} from "next/font/google";
+import dynamic from "next/dynamic";
 
 const inconsolata = Inconsolata({
   subsets: ["latin"],
@@ -29,13 +32,21 @@ export const metadata = {
   },
 };
 
+const DynamicNavbar = dynamic(() => import("./components/navbar"), {
+  ssr: false,
+  loading: () => <Navbar />,
+});
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{__html: getTheme}} />
+      </head>
       <body
         className={`flex flex-col w-screen h-screen ${inconsolata.className} dark:bg-dark-primary dark:text-white`}
       >
-        <Navbar />
+        <DynamicNavbar />
         <div className="flex-grow flex-shrink-0">{children}</div>
         <Footer />
       </body>
