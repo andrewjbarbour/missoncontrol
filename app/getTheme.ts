@@ -1,3 +1,6 @@
+//See discussion here for handling system theming in NextJS 13
+//https://github.com/vercel/next.js/discussions/53063#discussioncomment-6996549
+
 /* eslint-disable @typescript-eslint/no-empty-function */
 declare global {
   interface Window {

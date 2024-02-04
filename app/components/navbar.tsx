@@ -10,44 +10,8 @@ import {AiOutlineLoading} from "react-icons/ai";
 
 const navPages = ["projects", "media", "contact"];
 
-// export function useSchemeChange() {
-//   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
-
-//   React.useEffect(() => {
-//     setIsDarkTheme(
-//       localStorage.getItem("theme")
-//         ? localStorage.getItem("theme") === "dark"
-//         : window.matchMedia("(prefers-color-scheme: dark)").matches,
-//     );
-
-//     const handleSchemeChange = (e: MediaQueryListEvent) =>
-//       setIsDarkTheme(e.matches);
-
-//     const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-//     themeQuery.addEventListener("change", handleSchemeChange);
-
-//     () => themeQuery.removeEventListener("change", handleSchemeChange);
-//   }, []);
-
-//   React.useEffect(() => {
-//     if (isDarkTheme) {
-//       localStorage.setItem("theme", "dark");
-//       document.documentElement.classList.add("dark");
-//     } else {
-//       localStorage.setItem("theme", "light");
-//       document.documentElement.classList.remove("dark");
-//     }
-//   }, [isDarkTheme]);
-
-//   return {isDarkTheme, setIsDarkTheme};
-// }
-
 export default function Navbar() {
   const pathName = usePathname();
-
-  // const {isDarkTheme, setIsDarkTheme} = useSchemeChange();
-  // const isDarkTheme = theme === "dark";
 
   const [theme, setTheme] = React.useState(global.window?.__theme || "light");
 
@@ -80,7 +44,9 @@ export default function Navbar() {
         ) : global.window?.__theme ? (
           <IoSunnyOutline className={modeClassName} />
         ) : (
-          <AiOutlineLoading className={`${modeClassName} animate-spin-fast`} />
+          <AiOutlineLoading
+            className={`${modeClassName} animate-spin-fast opacity-0`}
+          />
         )}
       </div>
     </nav>

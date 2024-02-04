@@ -4,6 +4,7 @@ import * as React from "react";
 export default function Footer() {
   function handleClick() {
     window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+    console.log("clicked on scroll to top");
   }
 
   return (
