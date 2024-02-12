@@ -1,4 +1,3 @@
-// import Script from "next/script";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import {getTheme} from "./getTheme";
@@ -16,11 +15,6 @@ export const metadata = {
   title: "Andrew Barbour | Software Engineer",
   description:
     "I'm a full-stack developer passionate about building apps people love. Check out my work and get in touch through this site.",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   appleWebApp: {
     title: "Apple Web App",
     statusBarStyle: "black-translucent",
@@ -32,7 +26,7 @@ export const metadata = {
   },
 };
 
-const DynamicNavbar = dynamic(() => import("./components/navbar"), {
+const ThemedNavbar = dynamic(() => import("./components/navbar"), {
   ssr: false,
   loading: () => <Navbar />,
 });
@@ -46,7 +40,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body
         className={`flex flex-col w-screen h-screen ${inconsolata.className} dark:bg-dark-primary dark:text-white`}
       >
-        <DynamicNavbar />
+        <ThemedNavbar />
         <div className="flex-grow flex-shrink-0">{children}</div>
         <Footer />
       </body>
