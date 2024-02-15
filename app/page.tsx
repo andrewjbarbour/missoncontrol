@@ -13,6 +13,7 @@ export default function Home() {
             className="rounded-full min-h-260 scale-75 w-[371px] h-[395px]"
             src={profile}
             priority
+            loading="eager"
           />
           <div className="max-w-xl text-xl mx-10 mb-5">
             <h1 className="text-3xl text-center sm:text-left mb-10 font-bold">{`Hi, I'm Andrew.`}</h1>
