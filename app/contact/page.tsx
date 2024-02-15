@@ -15,7 +15,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = React.useState(false);
   const [formData, setFormData] = React.useState({});
 
-  const encode = (data: any) => {
+  const encode = (data: {[key: string]: string}) => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
