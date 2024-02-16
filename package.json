@@ -5,14 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prepare": "husky install",
+    "prepare": "husky",
     "start": "next start",
     "lint": "next lint",
     "watch": "npx tailwindcss -i src/input.css -o dist/output.css --watch"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npx lint-staged --debug --verbose"
     }
   },
   "lint-staged": {
